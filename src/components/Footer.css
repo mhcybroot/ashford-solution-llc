@@ -37,7 +37,8 @@
 
 /* Brand Column */
 .brand-col .footer-logo {
-    height: 60px;
+    height: 80px;
+    /* Increased for circular logo */
     width: auto;
     margin-bottom: var(--space-6);
     /* Robust fix for Dark/Light alignment */

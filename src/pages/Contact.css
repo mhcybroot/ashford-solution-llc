@@ -27,6 +27,7 @@
     align-items: center;
     gap: var(--space-4);
     padding: var(--space-4);
+    /* Inherits Card styles */
 }
 
 .icon-box {
@@ -34,6 +35,13 @@
     padding: var(--space-3);
     background-color: var(--color-neutral-50);
     border-radius: var(--radius-full);
+    transition: transform var(--transition-base);
+}
+
+.info-card:hover .icon-box {
+    transform: scale(1.1);
+    background-color: var(--color-primary-900);
+    color: var(--color-secondary-500);
 }
 
 .info-card h3 {
@@ -45,21 +53,24 @@
 .info-card a {
     margin: 0;
     color: var(--color-neutral-600);
+    transition: color var(--transition-fast);
 }
 
 .info-card a:hover {
-    color: var(--color-secondary-500);
+    color: var(--color-secondary-600);
 }
 
 .map-container {
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-neutral-200);
 }
 
 .contact-form-wrapper {
     background-color: var(--color-white);
     padding: var(--space-8);
+    /* Card styles applied by component */
 }
 
 .contact-form-wrapper h2 {
@@ -74,8 +85,9 @@
 .form-group label {
     display: block;
     margin-bottom: var(--space-2);
-    font-weight: 500;
-    color: var(--color-primary-900);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-primary-800);
 }
 
 .form-group input,
@@ -86,14 +98,24 @@
     border: 1px solid var(--color-neutral-300);
     border-radius: var(--radius-sm);
     font-family: var(--font-sans);
-    transition: border-color var(--transition-fast);
+    transition: all var(--transition-fast);
+    background-color: var(--color-neutral-50);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: var(--color-neutral-400);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-primary-900);
+    border-color: var(--color-secondary-500);
+    background-color: var(--color-white);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    /* Gold focus ring */
 }
 
 .page-header {
@@ -107,6 +129,7 @@
 
 .submit-btn {
     width: 100%;
+    margin-top: var(--space-2);
 }
 
 .success-message {
@@ -126,6 +149,7 @@
     gap: var(--space-2);
     color: var(--color-error);
     margin-bottom: var(--space-4);
+    font-size: 0.9rem;
 }
 
 @media (max-width: 900px) {

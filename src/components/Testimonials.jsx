@@ -14,7 +14,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="testimonials-grid">
-                    {testimonials.map((item, index) => (
+                    {testimonials.slice(0, 3).map((item, index) => (
                         <div
                             key={item.id}
                             className="testimonial-card"

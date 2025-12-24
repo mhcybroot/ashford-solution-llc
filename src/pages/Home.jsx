@@ -77,11 +77,6 @@ const Home = () => {
                         <p>Ensuring properties meet local codes, safety standards, and regulations.</p>
                     </Card>
 
-                    <Card className="service-card" data-aos="fade-up" data-aos-delay="500">
-                        <PaintBucket size={40} className="service-icon" strokeWidth={1.5} />
-                        <h3>Tenant Turn Services</h3>
-                        <p>Rapid preparation between tenants including painting and cleaning.</p>
-                    </Card>
                 </div>
 
                 <div className="services-action" data-aos="fade-up">
