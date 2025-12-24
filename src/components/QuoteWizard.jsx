@@ -10,13 +10,13 @@ const QuoteWizard = () => {
         serviceType: '',
         propertyType: '',
         urgency: '',
+        budget: '', // Added budget field
         description: '',
         name: '',
         email: '',
         phone: '',
         address: ''
     });
-    const [submitted, setSubmitted] = useState(false);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -32,27 +32,32 @@ const QuoteWizard = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate API call
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 1500);
-    };
 
-    if (submitted) {
-        return (
-            <div className="wizard-container submitted" data-aos="fade-up">
-                <div className="success-content">
-                    <div className="check-circle">
-                        <Check size={50} />
-                    </div>
-                    <h2>Quote Request Received!</h2>
-                    <p>Thanks {formData.name}, we have received your details.</p>
-                    <p>One of our specialists will review your requirements for <strong>{formData.serviceType}</strong> and contact you regarding the property at <strong>{formData.address}</strong> within 24 hours.</p>
-                    <Button variant="primary" onClick={() => window.location.href = '/'}>Return Home</Button>
-                </div>
-            </div>
-        );
-    }
+        // Construct Mailto Link
+        const subject = `Quote Request: ${formData.serviceType} (${formData.propertyType})`;
+        const body =
+            `Request Details:
+----------------
+Service: ${formData.serviceType}
+Property Type: ${formData.propertyType}
+Urgency: ${formData.urgency}
+Budget: ${formData.budget}
+
+Description:
+${formData.description}
+
+Contact Info:
+-------------
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Property Address: ${formData.address}`;
+
+        const mailtoLink = `mailto:clients@ashfordsolutions.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open Email Client
+        window.location.href = mailtoLink;
+    };
 
     return (
         <div className="wizard-page">
@@ -88,7 +93,7 @@ const QuoteWizard = () => {
                             </div>
                             <div className="form-group">
                                 <label>Property Type</label>
-                                <select name="propertyType" value={formData.propertyType} onChange={handleInputChange}>
+                                <select name="propertyType" value={formData.propertyType} onChange={handleInputChange} required>
                                     <option value="">Select Type</option>
                                     <option value="Single Family">Single Family Home</option>
                                     <option value="Multi-Family">Multi-Family / Apartment</option>
@@ -100,11 +105,11 @@ const QuoteWizard = () => {
 
                     {step === 2 && (
                         <div className="wizard-step">
-                            <h2>Step 2: Urgency & Description</h2>
+                            <h2>Step 2: Scope & Budget</h2>
                             <div className="form-group">
                                 <label>How urgent is this request?</label>
                                 <div className="options-grid">
-                                    {['Emergency (24hrs)', 'Urgent (1-3 Days)', 'Standard (1-2 Weeks)', 'Planning Phase'].map((opt) => (
+                                    {['Emergency', 'Urgent (1-3 Days)', 'Standard', 'Planning'].map((opt) => (
                                         <div
                                             key={opt}
                                             className={`option-card ${formData.urgency === opt ? 'selected' : ''}`}
@@ -115,6 +120,19 @@ const QuoteWizard = () => {
                                     ))}
                                 </div>
                             </div>
+
+                            <div className="form-group">
+                                <label>Estimated Budget</label>
+                                <select name="budget" value={formData.budget} onChange={handleInputChange}>
+                                    <option value="">Select Range</option>
+                                    <option value="Under $1,000">Under $1,000</option>
+                                    <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                                    <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                                    <option value="$15,000+">$15,000+</option>
+                                    <option value="Not Sure">Not Sure / To Be Determined</option>
+                                </select>
+                            </div>
+
                             <div className="form-group">
                                 <label>Describe the work needed</label>
                                 <textarea
@@ -123,6 +141,7 @@ const QuoteWizard = () => {
                                     value={formData.description}
                                     onChange={handleInputChange}
                                     placeholder="E.g., Roof leak, full kitchen remodel, lawn care..."
+                                    required
                                 ></textarea>
                             </div>
                         </div>
@@ -165,7 +184,7 @@ const QuoteWizard = () => {
                             </Button>
                         ) : (
                             <Button type="submit" variant="primary" className="action-btn ml-auto">
-                                Submit Request <Send size={18} />
+                                Open Email Client <Send size={18} />
                             </Button>
                         )}
                     </div>

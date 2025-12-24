@@ -1,20 +1,23 @@
 .wizard-page {
     padding: 6rem 1rem;
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-neutral-100);
     min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('../assets/images/pattern-architectural.png');
+    background-blend-mode: overlay;
 }
 
 .wizard-container {
     background-color: var(--color-white);
     max-width: 700px;
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
     padding: 3rem;
     position: relative;
+    border: 1px solid var(--color-neutral-200);
 }
 
 .wizard-header {
@@ -25,6 +28,7 @@
 .wizard-header h1 {
     margin-bottom: 1.5rem;
     font-size: 2rem;
+    color: var(--color-primary-900);
 }
 
 /* Progress Bar */
@@ -36,41 +40,44 @@
 }
 
 .step-dot {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: var(--color-bg-tertiary);
-    color: var(--color-text-secondary);
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-500);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .step-dot.active {
-    background-color: var(--color-text-primary);
-    color: var(--color-white);
+    background-color: var(--color-primary-900);
+    color: var(--color-secondary-500);
+    border-color: var(--color-secondary-500);
+    box-shadow: var(--shadow-md);
 }
 
 .step-line {
     width: 60px;
-    height: 2px;
-    background-color: var(--color-bg-tertiary);
+    height: 3px;
+    background-color: var(--color-neutral-200);
     margin: 0 10px;
 }
 
 .step-line.active {
-    background-color: var(--color-text-primary);
+    background-color: var(--color-secondary-500);
 }
 
 /* Form Steps */
 .wizard-step h2 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    color: var(--color-text-primary);
-    border-bottom: 1px solid var(--color-bg-tertiary);
+    color: var(--color-primary-900);
+    border-bottom: 2px solid var(--color-neutral-100);
     padding-bottom: 0.5rem;
 }
 
@@ -81,13 +88,36 @@
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--color-primary-800);
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+}
+
+/* Input Styles (Matched to Contact.css) */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-sans);
+    transition: all var(--transition-fast);
+    background-color: var(--color-neutral-50);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary-500);
+    background-color: var(--color-white);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
 }
 
 /* Option Cards */
@@ -98,30 +128,35 @@
 }
 
 .option-card {
-    border: 1px solid var(--color-bg-tertiary);
+    border: 1px solid var(--color-neutral-300);
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     text-align: center;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     transition: all 0.2s ease;
+    background-color: var(--color-white);
 }
 
 .option-card:hover {
-    border-color: var(--color-text-secondary);
+    border-color: var(--color-secondary-500);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .option-card.selected {
-    background-color: var(--color-text-primary);
-    color: var(--color-white);
-    border-color: var(--color-text-primary);
+    background-color: var(--color-primary-900);
+    color: var(--color-secondary-500);
+    border-color: var(--color-primary-900);
+    box-shadow: var(--shadow-md);
 }
 
 /* Actions */
 .wizard-actions {
     display: flex;
     margin-top: 3rem;
-    border-top: 1px solid var(--color-bg-tertiary);
+    border-top: 1px solid var(--color-neutral-200);
     padding-top: 1.5rem;
 }
 
@@ -151,11 +186,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 2rem;
-}
-
-.success-content p {
-    color: var(--color-text-secondary);
-    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 600px) {
