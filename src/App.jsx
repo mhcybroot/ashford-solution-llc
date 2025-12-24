@@ -13,6 +13,8 @@ import Portfolio from './pages/Portfolio';
 import QuoteWizard from './components/QuoteWizard';
 import './App.css';
 
+import Maintenance from './pages/Maintenance';
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -21,6 +23,13 @@ function App() {
       once: true,
     });
   }, []);
+
+  // Maintenance Mode Logic
+  const isMaintenanceMode = import.meta.env.VITE_MAINTENANCE_MODE === 'true';
+
+  if (isMaintenanceMode) {
+    return <Maintenance />;
+  }
 
   return (
     <Router>
