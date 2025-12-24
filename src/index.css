@@ -1,0 +1,98 @@
+:root {
+  /* Refined Color Palette */
+  --color-text-primary: #111827;
+  /* Deeper Charcoal */
+  --color-text-secondary: #4b5563;
+  /* Cool Gray 600 */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  /* Cool Gray 50 */
+  --color-bg-tertiary: #f3f4f6;
+  /* Cool Gray 100 */
+  --color-bg-dark: #1f2937;
+  /* Cool Gray 800 */
+  --color-accent: #374151;
+  /* Cool Gray 700 */
+  --color-highlight: #d4af37;
+  /* Muted Gold for premium accents (Optional usage) */
+  --color-white: #ffffff;
+
+  /* Typography Scale */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  /* Base size */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  color: var(--color-text-primary);
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  /* Increased padding for more breathing room */
+}
