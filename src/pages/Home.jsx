@@ -1,13 +1,20 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Shield, Hammer, Wrench, FileCheck, PaintBucket, Home as HomeIcon, Clock, ThumbsUp as ThumbsUpIcon, Users } from 'lucide-react';
 import Button from '../components/Button';
+import Testimonials from '../components/Testimonials';
 import './Home.css';
 
 const Home = () => {
     return (
         <div className="home-page">
+            <Helmet>
+                <title>Ashford Solutions LLC | Property Preservation & Renovation Houston</title>
+                <meta name="description" content="Premier property preservation, maintenance, and renovation services in Houston, TX. Protecting and enhancing your real estate assets." />
+            </Helmet>
+
             {/* Hero Section */}
             <section className="hero">
                 <div className="hero-overlay"></div>

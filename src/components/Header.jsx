@@ -48,7 +48,7 @@ const Header = () => {
                         <span>(832) 263-1162</span>
                     </a>
                     <div className="quote-btn-wrapper">
-                        <Link to="/contact"><Button variant="primary">Get a Quote</Button></Link>
+                        <Link to="/quote"><Button variant="primary">Get a Quote</Button></Link>
                     </div>
 
                     <button className="mobile-menu-btn" onClick={toggleMenu}>
@@ -66,7 +66,7 @@ const Header = () => {
                     <li><Link to="/portfolio" onClick={toggleMenu}>Portfolio</Link></li>
                     <li><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>
                     <li>
-                        <Link to="/contact" onClick={toggleMenu}>
+                        <Link to="/quote" onClick={toggleMenu}>
                             <Button variant="primary" className="mobile-quote-btn">Get a Quote</Button>
                         </Link>
                     </li>

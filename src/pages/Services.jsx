@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Shield, Hammer, Wrench, FileCheck, PaintBucket } from 'lucide-react';
 import './Services.css';
 
@@ -53,7 +54,12 @@ const Services = () => {
 
     return (
         <div className="services-page">
-            <div className="page-header">
+            <Helmet>
+                <title>Our Services | Ashford Solutions LLC</title>
+                <meta name="description" content="Comprehensive property services including preservation, maintenance, renovation, inspections, and tenant turns in Houston." />
+            </Helmet>
+
+            <div className="page-header" data-aos="fade-down">
                 <div className="container">
                     <h1>Our Services</h1>
                     <p>Comprehensive property solutions tailored to your needs.</p>
@@ -63,7 +69,7 @@ const Services = () => {
             <div className="container section">
                 <div className="services-list">
                     {services.map((service) => (
-                        <div key={service.id} id={service.id} className="service-item">
+                        <div key={service.id} id={service.id} className="service-item" data-aos="fade-up">
                             <div className="service-icon-wrapper">
                                 {service.icon}
                             </div>

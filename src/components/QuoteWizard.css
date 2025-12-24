@@ -1,0 +1,169 @@
+.wizard-page {
+    padding: 6rem 1rem;
+    background-color: var(--color-bg-secondary);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wizard-container {
+    background-color: var(--color-white);
+    max-width: 700px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 3rem;
+    position: relative;
+}
+
+.wizard-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.wizard-header h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.step-dot {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.step-dot.active {
+    background-color: var(--color-text-primary);
+    color: var(--color-white);
+}
+
+.step-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-bg-tertiary);
+    margin: 0 10px;
+}
+
+.step-line.active {
+    background-color: var(--color-text-primary);
+}
+
+/* Form Steps */
+.wizard-step h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-primary);
+    border-bottom: 1px solid var(--color-bg-tertiary);
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Option Cards */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.option-card {
+    border: 1px solid var(--color-bg-tertiary);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.option-card:hover {
+    border-color: var(--color-text-secondary);
+}
+
+.option-card.selected {
+    background-color: var(--color-text-primary);
+    color: var(--color-white);
+    border-color: var(--color-text-primary);
+}
+
+/* Actions */
+.wizard-actions {
+    display: flex;
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-bg-tertiary);
+    padding-top: 1.5rem;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+/* Submitted State */
+.submitted .success-content {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.check-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ecfdf5;
+    color: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+}
+
+.success-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .wizard-container {
+        padding: 1.5rem;
+    }
+}
