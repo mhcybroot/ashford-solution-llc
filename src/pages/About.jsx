@@ -2,6 +2,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Award, UserCheck, Target } from 'lucide-react';
+import Section from '../components/common/Section';
+import Card from '../components/common/Card';
 import teamImage from '../assets/images/about-team.png';
 import './About.css';
 
@@ -20,10 +22,11 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="container section">
+            <Section variant="white" className="about-mission-section">
                 <div className="about-grid">
                     <div className="about-text" data-aos="fade-right">
                         <h2>Our Mission</h2>
+                        <div className="divider"></div>
                         <p>
                             At Ashford Solutions LLC, our mission is to provide premier property preservation, maintenance, and renovation services
                             that protecting and enhancing the value of real estate assets. We are dedicated to serving investors, landlords,
@@ -43,30 +46,28 @@ const About = () => {
                         />
                     </div>
                 </div>
-            </div>
+            </Section>
 
-            <div className="section values-section">
-                <div className="container">
-                    <h2 className="section-title" data-aos="fade-up">Our Core Values</h2>
-                    <div className="values-grid">
-                        <div className="value-card" data-aos="fade-up" data-aos-delay="100">
-                            <div className="value-icon"><UserCheck size={40} /></div>
-                            <h3>Integrity</h3>
-                            <p>We believe in honest communication and transparent pricing. You can trust us to do what we say we will do.</p>
-                        </div>
-                        <div className="value-card" data-aos="fade-up" data-aos-delay="200">
-                            <div className="value-icon"><Award size={40} /></div>
-                            <h3>Quality</h3>
-                            <p>We take pride in our work. Every project, big or small, is completed to the highest standards of workmanship.</p>
-                        </div>
-                        <div className="value-card" data-aos="fade-up" data-aos-delay="300">
-                            <div className="value-icon"><Target size={40} /></div>
-                            <h3>Reliability</h3>
-                            <p>We respect your time and property. Our team is punctual, professional, and dedicated to meeting deadlines.</p>
-                        </div>
-                    </div>
+            <Section variant="gray" className="values-section">
+                <h2 className="section-title" data-aos="fade-up">Our Core Values</h2>
+                <div className="values-grid">
+                    <Card className="value-card" data-aos="fade-up" data-aos-delay="100">
+                        <div className="value-icon"><UserCheck size={40} /></div>
+                        <h3>Integrity</h3>
+                        <p>We believe in honest communication and transparent pricing. You can trust us to do what we say we will do.</p>
+                    </Card>
+                    <Card className="value-card" data-aos="fade-up" data-aos-delay="200">
+                        <div className="value-icon"><Award size={40} /></div>
+                        <h3>Quality</h3>
+                        <p>We take pride in our work. Every project, big or small, is completed to the highest standards of workmanship.</p>
+                    </Card>
+                    <Card className="value-card" data-aos="fade-up" data-aos-delay="300">
+                        <div className="value-icon"><Target size={40} /></div>
+                        <h3>Reliability</h3>
+                        <p>We respect your time and property. Our team is punctual, professional, and dedicated to meeting deadlines.</p>
+                    </Card>
                 </div>
-            </div>
+            </Section>
         </div>
     );
 };

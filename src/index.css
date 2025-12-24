@@ -1,41 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Refined Color Palette */
-  --color-text-primary: #111827;
-  /* Deeper Charcoal */
-  --color-text-secondary: #4b5563;
-  /* Cool Gray 600 */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f9fafb;
-  /* Cool Gray 50 */
-  --color-bg-tertiary: #f3f4f6;
-  /* Cool Gray 100 */
-  --color-bg-dark: #1f2937;
-  /* Cool Gray 800 */
-  --color-accent: #374151;
-  /* Cool Gray 700 */
-  --color-highlight: #d4af37;
-  /* Muted Gold for premium accents (Optional usage) */
+  /* =========================================
+     Color System: "Executive Modern"
+     ========================================= */
+
+  /* Primary (Authority) - Deep Charcoal */
+  --color-primary-900: #111827;
+  /* Main Text, Footer BG */
+  --color-primary-800: #1f2937;
+  /* Dark Containers */
+  --color-primary-700: #374151;
+  /* Strong Borders */
+
+  /* Secondary (Premium) - Muted Gold */
+  --color-secondary-600: #b4912f;
+  /* Active States */
+  --color-secondary-500: #d4af37;
+  /* Primary Brand Accent */
+  --color-secondary-400: #e5c35a;
+  /* Hover States */
+  --color-secondary-100: #fefce8;
+  /* Subtle Backgrounds */
+
+  /* Neutral (Structure) - Cool Grays */
+  --color-neutral-900: #111827;
+  /* Headings */
+  --color-neutral-700: #374151;
+  /* Body Text Primary */
+  --color-neutral-600: #4b5563;
+  /* Body Text Secondary */
+  --color-neutral-500: #6b7280;
+  /* Icons, Muted Text */
+  --color-neutral-300: #d1d5db;
+  /* Borders */
+  --color-neutral-200: #e5e7eb;
+  /* Dividers */
+  --color-neutral-100: #f3f4f6;
+  /* Secondary Backgrounds */
+  --color-neutral-50: #f9fafb;
+  /* Page Backgrounds */
   --color-white: #ffffff;
 
-  /* Typography Scale */
+  /* Feedback (Utility) */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* =========================================
+     Typography
+     ========================================= */
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Inter', sans-serif;
+
+  /* =========================================
+     Spacing Scale (4pt grid)
+     ========================================= */
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+  --space-24: 6rem;
+  /* 96px */
+
+  /* =========================================
+     Border Radius
+     ========================================= */
+  --radius-sm: 0.125rem;
+  /* 2px - Sharp/Professional */
+  --radius-md: 0.375rem;
+  /* 6px - Standard Cards */
+  --radius-lg: 0.5rem;
+  /* 8px - Larger Containers */
+  --radius-full: 9999px;
+  /* Pills/Buttons */
+
+  /* =========================================
+     Shadows (Layered for Depth)
+     ========================================= */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* =========================================
+     Transitions
+     ========================================= */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
 }
+
+/* =========================================
+   Global Reset & Base Styles
+   ========================================= */
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  /* Base size */
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
+  color: var(--color-neutral-700);
+  background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -48,30 +128,36 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
-  color: var(--color-text-primary);
+  color: var(--color-neutral-900);
   margin-top: 0;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  transition: color var(--transition-base);
 }
 
 ul {
@@ -85,13 +171,20 @@ button {
   font-family: var(--font-sans);
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   Utility Classes (Temporary)
+   ========================================= */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--space-6);
 }
 
 .section {
-  padding: 6rem 0;
-  /* Increased padding for more breathing room */
+  padding: var(--space-16) 0;
 }

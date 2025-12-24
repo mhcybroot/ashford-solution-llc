@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import Section from '../components/common/Section';
+import Card from '../components/common/Card';
 import './Portfolio.css';
 
 // Import Images
@@ -80,7 +82,7 @@ const Portfolio = () => {
                 </div>
             </div>
 
-            <div className="container section">
+            <Section variant="white">
                 {/* Filter Buttons */}
                 <div className="filter-container" data-aos="fade-up">
                     {categories.map(cat => (
@@ -97,7 +99,11 @@ const Portfolio = () => {
                 {/* Project Grid */}
                 <div className="projects-grid">
                     {filteredProjects.map((project) => (
-                        <div key={project.id} className="project-card" data-aos="fade-up">
+                        <Card
+                            key={project.id}
+                            className="project-card"
+                            data-aos="fade-up"
+                        >
                             <div className="project-image-container">
                                 <img src={project.image} alt={project.title} className="project-image" />
                                 <div className="project-overlay">
@@ -108,10 +114,10 @@ const Portfolio = () => {
                                 <h3>{project.title}</h3>
                                 <p>{project.description}</p>
                             </div>
-                        </div>
+                        </Card>
                     ))}
                 </div>
-            </div>
+            </Section>
         </div>
     );
 };

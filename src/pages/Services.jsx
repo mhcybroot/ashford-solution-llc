@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Shield, Hammer, Wrench, FileCheck, PaintBucket } from 'lucide-react';
+import Section from '../components/common/Section';
+import Card from '../components/common/Card';
 import './Services.css';
 
 const Services = () => {
@@ -66,21 +68,28 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className="container section">
+            <Section variant="white">
                 <div className="services-list">
                     {services.map((service) => (
-                        <div key={service.id} id={service.id} className="service-item" data-aos="fade-up">
+                        <Card
+                            key={service.id}
+                            id={service.id}
+                            className="service-item-card"
+                            hover={false}
+                            data-aos="fade-up"
+                        >
                             <div className="service-icon-wrapper">
                                 {service.icon}
                             </div>
                             <div className="service-content">
                                 <h2>{service.title}</h2>
+                                <div className="service-divider"></div>
                                 <p>{service.content}</p>
                             </div>
-                        </div>
+                        </Card>
                     ))}
                 </div>
-            </div>
+            </Section>
         </div>
     );
 };

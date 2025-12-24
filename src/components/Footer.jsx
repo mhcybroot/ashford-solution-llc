@@ -13,6 +13,7 @@ const Footer = () => {
                     <img src={logo} alt="Ashford Solutions LLC" className="footer-logo" />
                     <p className="footer-desc">
                         Your trusted partner for property preservation, maintenance, and renovation in Houston, TX.
+                        Protecting your assets with integrity and excellence.
                     </p>
                 </div>
 
@@ -31,15 +32,15 @@ const Footer = () => {
                     <h3>Contact Us</h3>
                     <ul className="contact-list">
                         <li>
-                            <MapPin size={18} className="icon" />
+                            <MapPin size={20} className="icon" />
                             <span>2401 Fountain View Dr. Ste 464,<br />Houston, TX 77057</span>
                         </li>
                         <li>
-                            <Phone size={18} className="icon" />
+                            <Phone size={20} className="icon" />
                             <a href="tel:8322631162">(832) 263-1162</a>
                         </li>
                         <li>
-                            <Mail size={18} className="icon" />
+                            <Mail size={20} className="icon" />
                             <a href="mailto:clients@ashfordsolutions.org">clients@ashfordsolutions.org</a>
                         </li>
                     </ul>
