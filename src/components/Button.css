@@ -20,7 +20,8 @@
 }
 
 /* Shine Effect on Hover */
-.btn-primary::after {
+.btn-primary::after,
+.btn-gold::after {
     content: '';
     position: absolute;
     top: 0;
@@ -35,7 +36,8 @@
     z-index: -1;
 }
 
-.btn-primary:hover::after {
+.btn-primary:hover::after,
+.btn-gold:hover::after {
     left: 100%;
 }
 
@@ -69,6 +71,19 @@
 .btn-outline:hover {
     background-color: var(--color-primary-900);
     color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-outline-white:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary-900);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }

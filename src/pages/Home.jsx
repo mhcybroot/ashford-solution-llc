@@ -131,13 +131,20 @@ const Home = () => {
             <Testimonials />
 
             {/* CTA Section - Dark Background */}
-            <section className="cta-section" data-aos="zoom-in">
-                <div className="cta-container">
+            {/* CTA Section - Executive Modern Update */}
+            <section className="cta-section">
+                <div className="cta-overlay"></div>
+                <div className="cta-container" data-aos="fade-up">
                     <h2>Ready to Enhance Your Property?</h2>
-                    <p>Contact us today for a quote or to schedule a service.</p>
-                    <Link to="/contact">
-                        <Button variant="primary">Contact Us Now</Button>
-                    </Link>
+                    <p>Stop settling for subpar maintenance. Partner with Houston's premier preservation experts today.</p>
+                    <div className="cta-actions">
+                        <Link to="/quote">
+                            <Button variant="gold" className="cta-btn">Get a Free Quote</Button>
+                        </Link>
+                        <Link to="/contact">
+                            <Button variant="outline-white" className="cta-btn">Contact Us</Button>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </div>
